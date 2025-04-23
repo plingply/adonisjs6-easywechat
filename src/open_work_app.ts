@@ -14,7 +14,14 @@ export class OpenWorkApp {
     const client = app.getClient()
     client.setLogger((type, req, code, res) => {
       if (type === 'after') {
-        logger.info('easychat openWork: \n req = %o \n code = %d \nres = %o', req, code, res?.data)
+        if (res?.data?.errcode !== 0) {
+          logger.error(
+            'easychat openWork: \n req = %o \n code = %d \nres = %o',
+            req,
+            code,
+            res?.data
+          )
+        }
       }
     })
     this.app = app

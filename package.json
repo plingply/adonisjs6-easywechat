@@ -1,7 +1,7 @@
 {
   "name": "adonisjs6-easywechat",
   "description": "easywechat for AdonisJS",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "engines": {
     "node": ">=20.6.0"
   },

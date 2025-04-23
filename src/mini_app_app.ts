@@ -14,7 +14,14 @@ export class MiniAppApp {
     const client = app.getClient()
     client.setLogger((type, req, code, res) => {
       if (type === 'after') {
-        logger.info('easychat miniapp: \n req = %o \n code = %d \nres = %o', req, code, res?.data)
+        if (res?.data?.errcode !== 0) {
+          logger.error(
+            'easychat miniapp: \n req = %o \n code = %d \nres = %o',
+            req,
+            code,
+            res?.data
+          )
+        }
       }
     })
     this.app = app
