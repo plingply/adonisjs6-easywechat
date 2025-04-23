@@ -1,0 +1,118 @@
+{{{ exports({ to: app.configPath('easywechat.ts') }) }}}
+import env from '#start/env'
+import { defineConfig } from 'adonisjs6-easywechat'
+
+const wechatConfig = defineConfig({
+  // 企业微信
+  wxwork: {
+    corp_id: env.get('WXWORK_CORPID', ''),
+    // 企业微信的 secret
+    secret: env.get('WXWORK_CORPSECRET', ''),
+    // 企业微信的 token
+    token: '',
+    // EncodingAESKey
+    aes_key: '',
+  },
+
+  // 公众号
+  officialAccount: {
+    // 公众号的 app key
+    app_id: '',
+    // 公众号的 app secret
+    secret: '',
+    // 公众号的 token
+    token: '',
+    // EncodingAESKey
+    aes_key: '',
+
+    // 网页授权认证
+    oauth: {
+      // 网页授权类型
+      scope: 'snsapi_userinfo',
+      // 网页授权回调地址，完整的URL
+      redirect: ''
+    },
+    // 是否使用稳定版接口调用凭据，默认：false
+    use_stable_access_token: false
+  },
+
+  // 小程序
+  miniapp: {
+    // 小程序的 app key
+    app_id: '',
+    // 小程序的 app secret
+    secret: '',
+    // 小程序的 token
+    token: '',
+    // EncodingAESKey
+    aes_key: '',
+    // 是否使用稳定版接口调用凭据，默认：false
+    use_stable_access_token: false
+  },
+
+  // 微信支付
+  pay: {
+    // 商户号
+    mch_id: '',
+    // 商户证书路径
+    certificate: '/path/to/apiclient_cert.pem',
+    // 商户证书私钥路径
+    private_key: '/path/to/apiclient_key.pem',
+    // 平台证书（v3接口需要）
+    // 持路径列表或者PublicKey对象列表或者，以serial_no为key，证书内容或PublicKey对象为value的对象
+    // 下载工具：https://github.com/wechatpay-apiv3/CertificateDownloader
+    // 从 3.5.15 版本开始，node-easywechat 会自动下载并缓存平台证书，开发者可以不再配置该参数，当然配置也还是可以的。
+    platform_certs: [
+      '/path/to/platform_cert_1.pem',
+      '/path/to/platform_cert_2.pem',
+    ],
+    // v3 API密钥
+    secret_key: '',
+    // v2 API密钥
+    v2_secret_key: '',
+  },
+
+  // 开放平台配置
+  openPlatform: {
+    // 开放平台的 app key
+    app_id: '',
+    // 开放平台的 app secret
+    secret: '',
+    // 开放平台的 token
+    token: '',
+    // EncodingAESKey
+    aes_key: '',
+  },
+
+  // 企业微信开放平台配置
+  openWork: {
+    // 企业微信的 corp id
+    corp_id: '',
+    // 企业微信的 secret
+    provider_secret: '',
+    // 第三方应用的 corp id
+    suite_id: '',
+    // 第三方应用的 secret
+    suite_secret: '',
+    // 企业微信服务端接口验证 token
+    token: '',
+    // 企业微信服务端消息加解密密钥
+    aes_key: '',
+  },
+
+  // 视频号
+  channel: {
+    // 视频号的 app key
+    app_id: '',
+    // 视频号的 app secret
+    secret: '',
+    // 视频号的 token
+    token: '',
+    // EncodingAESKey
+    aes_key: '',
+    // 是否使用稳定版接口调用凭据，默认：false
+    use_stable_access_token: false
+  }
+})
+
+export default wechatConfig
