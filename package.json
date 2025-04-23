@@ -12,7 +12,7 @@
   ],
   "exports": {
     ".": "./build/index.js",
-    "./src": "./build/src/*.js",
+    "./src/*": "./build/src/*.js",
     "./providers/*": "./build/providers/*.js",
     "./services/*": "./build/services/*.js"
   },
