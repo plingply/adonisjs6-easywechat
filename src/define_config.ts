@@ -1,4 +1,22 @@
-import { EasychatConfig } from '../types/index.js'
+import {
+  ChannelConfig,
+  MiniAppConfig,
+  OfficialAccountConfig,
+  OpenPlatformConfig,
+  OpenWorkConfig,
+  PayConfig,
+  WorkConfig,
+} from 'node-easywechat'
+
+export declare interface EasychatConfig {
+  work: WorkConfig
+  officialAccount: OfficialAccountConfig
+  miniapp: MiniAppConfig
+  channel: ChannelConfig
+  pay: PayConfig
+  openPlatform: OpenPlatformConfig
+  openWork: OpenWorkConfig
+}
 export function defineConfig(config: EasychatConfig): EasychatConfig {
   return config
 }
