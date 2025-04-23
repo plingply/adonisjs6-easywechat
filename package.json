@@ -1,7 +1,7 @@
 {
   "name": "adonisjs6-easywechat",
   "description": "easywechat for AdonisJS",
-  "version": "0.0.6",
+  "version": "1.0.3",
   "engines": {
     "node": ">=20.6.0"
   },
@@ -60,7 +60,7 @@
   },
   "author": "plingply <plin@qq.com>",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/plingply/adonisjs6-easywechat",
   "keywords": [
     "adonisjs",
     "wecaht",

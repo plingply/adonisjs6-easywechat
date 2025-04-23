@@ -8,7 +8,7 @@ import {
   WorkConfig,
 } from 'node-easywechat'
 
-export interface EasychatConfig {
+export declare interface EasychatConfig {
   work: WorkConfig
   officialAccount: OfficialAccountConfig
   miniapp: MiniAppConfig
