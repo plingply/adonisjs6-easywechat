@@ -1,7 +1,7 @@
 {
   "name": "adonisjs6-easywechat",
   "description": "easywechat for AdonisJS",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "engines": {
     "node": ">=20.6.0"
   },
@@ -12,7 +12,7 @@
   ],
   "exports": {
     ".": "./build/index.js",
-    "./types": "./build/types/types.js",
+    "./src": "./build/src/*.js",
     "./providers/*": "./build/providers/*.js",
     "./services/*": "./build/services/*.js"
   },
