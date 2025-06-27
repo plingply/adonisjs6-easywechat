@@ -2,8 +2,8 @@ import cache from '@adonisjs/cache/services/main'
 import { CacheInterface } from 'node-easywechat'
 
 export default class RedisCacher extends CacheInterface {
-  get(id: any) {
-    return cache.get({
+  async get(id: any) {
+    return await cache.get({
       key: id,
     })
   }
