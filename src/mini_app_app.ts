@@ -13,22 +13,21 @@ export class MiniAppApp {
     app.setCache(new RedisCacher())
     const client = app.getClient()
     client.setLogger((type, req, code, res) => {
-      if (res?.data?.errcode !== 0) {
-        logger.error(
-          'easychat miniapp: \n type = %s req = %o \n code = %d \nres = %o',
-          type,
-          req,
-          code,
-          res
-        )
-      } else {
-        logger.info(
-          'easychat miniapp: \n type = %s req = %o \n code = %d \nres = %o',
-          type,
-          req,
-          code,
-          res?.data
-        )
+      if (type === 'before') {
+        logger.info('easychat miniapp: \n type = %s code = %d \n req = %o \n ', type, code, req)
+      }
+
+      if (type === 'after') {
+        if (res?.data?.errcode !== 0) {
+          logger.error('easychat miniapp: \n type = %s \n code = %d \nres = %o', type, code, res)
+        } else {
+          logger.info(
+            'easychat miniapp: \n type = %s \n code = %d \nres = %o',
+            type,
+            code,
+            res?.data
+          )
+        }
       }
     })
     this.app = app
