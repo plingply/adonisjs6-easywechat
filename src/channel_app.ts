@@ -13,20 +13,9 @@ export class ChannelApp {
     app.setCache(new RedisCacher())
     const client = app.getClient()
     client.setLogger((type, req, code, res) => {
-      if (type === 'before') {
-        logger.info('easychat channel: \n type = %s code = %d \n req = %o \n ', type, code, req)
-      }
-
       if (type === 'after') {
         if (res?.data?.errcode !== 0) {
           logger.error('easychat channel: \n type = %s \n code = %d \nres = %o', type, code, res)
-        } else {
-          logger.info(
-            'easychat channel: \n type = %s \n code = %d \nres = %o',
-            type,
-            code,
-            res?.data
-          )
         }
       }
     })
